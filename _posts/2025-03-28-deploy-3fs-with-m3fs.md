@@ -24,7 +24,7 @@ Of course, you can also use non-RDMA virtual machines for testing. M3FS supports
 ## Environmental Planning
 
 
-We use 4 storage nodes and 4 client nodes. The network bandwidth of the virtual machines is 50 Gbps and they support RDMA.
+We use 4 storage nodes and 4 client nodes. The network bandwidth of the servers is 50 Gbps and they support RDMA.
 Each storage node contains four local NVMe SSDs. If there is no NVMe SSD in the test environment, M3FS also supports using directories to act as NVMe SSDs to deploy a 3FS cluster.
 The servers uses Ubuntu 22.04 OS + Docker because containers will be used to run the 3FS software.
 
