@@ -12,7 +12,7 @@ M3FS (Make3FS) is a tool used to deploy, test and evaluate DeepSeek 3FS file sys
 Right now, 3FS is open-source, but there are some challenges when it comes to deploying, testing, and evaluating it. 
 Open3FS offers the open-source M3FS (Make 3FS) deployment tool. M3FS can deploy a 3FS cluster with 20 nodes in just 30 seconds and it works in non-RDMA environments too. Therefore, the difficulty of deployment is reduced. 
 
-Open3FS aims to offer users a free 3FS distribution to meet their immediate needs and enable them to quickly evaluate and test 3FS. Currently, the M3FS tool and 3FS container images are available on the Open3FS.com . The main features of M3FS are:
+[**Open3FS**](https://open3fs.com) aims to offer users a free 3FS distribution to meet their immediate needs and enable them to quickly evaluate and test 3FS. Currently, the M3FS tool and 3FS container images are available on the Open3FS.com . The main features of M3FS are:
 - Simplify the deployment process of 3FS clusters.
 - Running 3FS component inside container. 
 - As many users' virtual machine environments do not support RDMA, M3FS can use RXE to simulate RDMA.
