@@ -366,4 +366,4 @@ Open3FS not only provides installation videos, container images, and deployment 
 
 ## Appendix: Video about Deploying and Testing 3FS
 
-[Click to play: Video about Deploying and Testing 3FS](https://r2.open3fs.com/m3fs-install-3fs-en-v6.mp4)
+{% include youtube.html id="dVaYtlP4jKY" %}
