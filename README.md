@@ -18,7 +18,7 @@ Clone the repository and write posts locally.
 
    ```yaml
    ---
-   layout: default
+   layout: post
    title: "Your Post Title"
    date: YYYY-MM-DD HH:MM:SS +0800
    ---
