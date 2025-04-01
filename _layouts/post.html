@@ -1,0 +1,180 @@
+---
+layout: default
+---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+	<header class="post-header">
+		<!-- <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1> -->
+		<p class="post-meta">
+			<time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+				{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+				{{ page.date | date: date_format }}
+			</time>
+			{%- if page.author -%}
+			• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+					itemprop="name">{{ page.author }}</span></span>
+			{%- endif -%}
+		</p>
+	</header>
+
+	<div class="post-content-wrapper">
+		<div class="post-content e-content" itemprop="articleBody">
+			{{ content }}
+		</div>
+		<div class="toc-wrapper">
+			<div class="js-toc"></div>
+		</div>
+	</div>
+
+	{% include utteranc.html %}
+
+	<a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
+
+<!-- Include tocbot CSS and JS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js"></script>
+
+<style>
+	.post-content-wrapper {
+		position: relative;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1rem;
+		display: flex;
+		gap: 32px;
+	}
+
+	.post-content {
+		max-width: 800px;
+		margin: 0;
+	}
+
+	.toc-wrapper {
+		width: 360px;
+	}
+
+	/* TOC List Styling */
+	.toc-list {
+		padding: 0;
+		margin: 0;
+	}
+
+	.toc-list-item {
+		padding: 0;
+		margin: 0;
+	}
+
+	.toc-list-item .toc-list {
+		padding-left: 1rem;
+		margin-top: 0.5rem;
+	}
+
+	.toc-link {
+		color: #0366d6;
+		text-decoration: none;
+		display: block;
+		padding: 0.2rem 0;
+		font-size: 0.9rem;
+		padding-left: 0.5rem;
+		margin-left: -0.5rem;
+	}
+
+	.toc-link:before {
+		display: none;
+	}
+
+	.is-active-link {
+		color: #1a7f37 !important;
+		font-weight: 600;
+	}
+
+	.is-active-link:before {
+		content: "🔥";
+		display: none;
+	}
+
+	.is-collapsible {
+		max-height: 1000px;
+		overflow: hidden;
+		transition: all 300ms ease-in-out;
+	}
+
+	.is-collapsed {
+		max-height: 0;
+	}
+
+	@media (max-width: 1400px) {
+		.toc-wrapper {
+			right: 2rem;
+		}
+	}
+
+	@media (max-width: 1024px) {
+		.post-content-wrapper {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.toc-wrapper {
+			width: 100%;
+			max-width: none;
+			height: auto;
+			margin: 2rem 0;
+			order: 0;
+		}
+
+		.post-content {
+			width: 100%;
+			order: 1;
+		}
+	}
+</style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		tocbot.init({
+			// Where to render the table of contents
+			tocSelector: '.js-toc',
+			// Where to grab the headings
+			contentSelector: '.post-content',
+			// Which headings to grab
+			headingSelector: 'h1, h2, h3',
+			// Better support for headings in relative containers
+			hasInnerContainers: true,
+			// Smoother scrolling
+			scrollSmooth: true,
+			scrollSmoothDuration: 300,
+			scrollSmoothOffset: -60,
+			// Classes
+			linkClass: 'toc-link',
+			activeLinkClass: 'is-active-link',
+			listClass: 'toc-list',
+			listItemClass: 'toc-list-item',
+			isCollapsedClass: 'is-collapsed',
+			collapsibleClass: 'is-collapsible',
+			activeListItemClass: 'is-active-li',
+			// Collapse deeper levels
+			collapseDepth: 6,
+			// Don't include HTML, just text
+			includeHtml: false,
+			// Include title attributes
+			includeTitleTags: true,
+			// Ordered list
+			orderedList: false,
+			// Ignore hidden elements
+			ignoreHiddenElements: true,
+			// Highlight active section
+			highlightOnScroll: true,
+			// Offset for highlighting
+			headingsOffset: 100,
+			// Performance
+			throttleTimeout: 100,
+			// Enable URL hash update
+			enableUrlHashUpdateOnScroll: true,
+			// Scroll container and sync
+			scrollContainer: null,
+			disableTocScrollSync: false,
+			tocScrollOffset: 0
+		});
+	});
+</script>

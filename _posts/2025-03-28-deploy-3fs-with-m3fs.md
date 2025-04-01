@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "Deploy the DeepSeek 3FS cluster quickly by using M3FS"
 date:   2025-03-28 15:00:00 +0800
 ---

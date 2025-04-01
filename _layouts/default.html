@@ -32,21 +32,7 @@
   </header>
 
   <main id="content" class="main-content" role="main">
-    <!-- Only post pages show date and comments -->
-    {% if page.collection == 'posts' %}
-    <div class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
-    </div>
-    {% endif %}
-
     {{ content }}
-
-    <!-- Only post pages show comments -->
-    {% if page.collection == 'posts' %}
-    <hr>
-    {% include utteranc.html %}
-    {% endif %}
-
 
     <footer class="site-footer">
       {% if site.github.is_project_page %}

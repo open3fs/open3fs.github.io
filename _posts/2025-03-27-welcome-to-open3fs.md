@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "Welcome to Open3FS Blog"
 date:   2025-03-27 21:20:16 +0800
 ---

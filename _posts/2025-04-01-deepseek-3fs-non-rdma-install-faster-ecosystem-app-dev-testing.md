@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "DeepSeek 3FS: non-RDMA install, faster ecosystem app dev/testing."
 date:   2025-04-01 11:00:00 +0800
 ---
