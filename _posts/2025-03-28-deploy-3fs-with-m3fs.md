@@ -28,7 +28,7 @@ We use 4 storage nodes and 4 client nodes. The network bandwidth of the servers 
 Each storage node contains four local NVMe SSDs. If there is no NVMe SSD in the test environment, M3FS also supports using directories to act as NVMe SSDs to deploy a 3FS cluster.
 The servers uses Ubuntu 22.04 OS + Docker because containers will be used to run the 3FS software.
 
-## Node Hardware Configuration
+### Node Hardware Configuration
 
 The following table shows the configuration of storage and client nodes in our test environment:
 
@@ -43,7 +43,7 @@ The following table shows the configuration of storage and client nodes in our t
 | open3fs-client03 | 10.0.0.103 | 96 | 256 GiB | - | 50 Gb RDMA |
 | open3fs-client04 | 10.0.0.104 | 96 | 256 GiB | - | 50 Gb RDMA |
 
-## Network Topology and Configuration of 3FS Component Role
+### Network Topology and Configuration of 3FS Component Role
 
 The role configuration of the 3FS component in this test is shown in the following figure. In actual production, at least three nodes should be configured for the mgmtd role.
 
@@ -83,7 +83,7 @@ curl -sfL https://artifactory.open3fs.com/m3fs/getm3fs | sh
 
 ![curl getm3fs]({{ site.url }}/assets/imgs/20250328-curl-getm3fs.png)
 
-## Create and Edit the cluster.yml file
+### Create and Edit the cluster.yml file
 
 The 3FS file storage cluster includes component roles such as mgmtd, meta, monitor, fdb, clickhouse, storage, and hf3fs_fuse. It is necessary to specify on which nodes different roles are deployed in the cluster.yml file.
 
@@ -184,7 +184,7 @@ images:
     tag: "25.1-jammy"
 ```
 
-## Download the 3FS container image
+### Download the 3FS container image
 
 Execute the following command to download the container image of 3FS, with a total size of about 7GiB.
 
@@ -206,7 +206,7 @@ https://artifactory.open3fs.com/3fs/clickhouse_25.1-jammy_amd64.docker.sha256sum
 https://artifactory.open3fs.com/3fs/foundationdb_7.3.63_amd64.docker.sha256sum
 ```
 
-## Prepare the 3FS environment
+### Prepare the 3FS environment
 
 The next command will distribute the 3FS container image to all nodes and automatically perform environment configuration. In a non-RDMA environment, RXE will be configured.
 
@@ -220,7 +220,7 @@ After executing the above commands, we can observe the newly added container ima
 
 ![Docker images on node]({{ site.url }}/assets/imgs/20250328-cluster-prepare-2.png)
 
-## One-click deploy the 3FS cluster
+### One-step deploy the 3FS cluster
 
 Finally, execute the following command to deploy the 3FS cluster within 30 seconds.
 
@@ -234,7 +234,7 @@ After m3fs successfully deploys a 3FS cluster, check the running status of the 3
 
 ![Cluster Create Containers]({{ site.url }}/assets/imgs/20250328-cluster-create-2.png)
 
-Check the 3FS cluster
+### Check the 3FS cluster
 
 After the 3FS cluster is deployed, we can execute the following command to check the list of 3FS roles.
 
