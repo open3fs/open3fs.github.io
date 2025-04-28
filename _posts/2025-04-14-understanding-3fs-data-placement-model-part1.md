@@ -10,7 +10,7 @@ This blog post will guide you through the fundamental concepts and procedures of
 
 ## Overview
 
-The script approaches data placement strategy calculation as a linear programming problem. It defines two key variables that need to be solved under a set of carefully designed constraints.
+The script approaches data placement strategy calculation as a linear regression problem. It defines two key variables that need to be solved under a set of carefully designed constraints.
 
 ## Key Concepts
 
