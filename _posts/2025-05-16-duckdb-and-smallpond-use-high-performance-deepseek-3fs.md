@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "How to Enable DuckDB/Smallpond to Use High-Performance DeepSeek 3FS"
-date:   2025-05-16 15:00:00 +0800
+title: "How to Enable DuckDB/Smallpond to Use High-Performance DeepSeek 3FS"
+date: 2025-05-16
 ---
 
 
