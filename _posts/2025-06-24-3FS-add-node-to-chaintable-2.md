@@ -1,7 +1,7 @@
 ---
 layout: "post"
 title: "Add a Storage Node to a Chain Table -- 2"
-date: 2025-06-04
+date: 2025-06-24
 ---
 
 In the previous article, we proposed a method to add new storage nodes to a 3FS chain table. However, that method reduces data reliability of a chain because it first removes the migrating target from a chain. In this article, we propose a more secure method by adding the target to a chain first.
@@ -70,7 +70,7 @@ The method works as follows:
 2. Process every existing chain sequentially: 
     1. Get the locations of the chain, compare current locations with new locations.
     2. If all locations of the chain do not change at all (all replicas stay in current locations), nothing needs to be done.
-    3. If a location of the chain changed, we create a new target for the location with a new target ID which is different from all existing targets. Add the new target to the chain with the `update-chain --mode add` command. Wait until all targets' status becomes SERVING-UPTODATE. We do this for all changed locations first. After all new locations (new targets) become UPTODATE, we remove old targets.
+    3. If a location of the chain changed, we **create a new target for the location with a new target ID** which is different from all existing targets. Add the new target to the chain with the `update-chain --mode add` command. Wait until all targets' status becomes SERVING-UPTODATE. We do this for all changed locations first. After all new locations (new targets) become UPTODATE, we remove old targets.
 3. Create new targets for new chains.
 4. Generate the CSV files of chain and chain table, and upload them.
 
